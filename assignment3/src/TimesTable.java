@@ -13,14 +13,38 @@ public class TimesTable {
         int maxNumber = 10;
 
         if (userNumber >= minNumber && userNumber <= maxNumber) {
-            for (int i = minNumber; i <= maxNumber; i++) {
-                int result = userNumber * i;
-                System.out.println(userNumber + " * " + i + " = " + result);
+            
+            int i = 0;
+            
+            System.out.println("FOR loop");
+            for (i = minNumber; i <= maxNumber; i++) {
+                PrintResult(userNumber, i);
             }
+
+            System.out.println("");
+
+            System.out.println("WHILE loop");
+            i = minNumber; // reset the index for the next loop
+            while (i <= maxNumber) {
+                PrintResult(userNumber, i++);
+            }
+
+            System.out.println("");
+
+            System.out.println("DO WHILE loop");
+            i = minNumber; // reset the index for the next loop
+            do {
+                PrintResult(userNumber, i++);
+            } while (i <= maxNumber);
+            
         } else {
             System.out.print("Sorry, you number is invalid!");
         }
         
         sc.close();
+    }
+
+    public static void PrintResult(int userNumber, int i) {
+        System.out.println(userNumber + " * " + i + " = " + (userNumber * i));
     }
 }
